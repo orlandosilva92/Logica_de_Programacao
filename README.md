@@ -62,3 +62,34 @@ Incremento e Decremento
 "++"
 "--"
 
+Trabalhando com condicionais
+
+Para entrar em uma condicional é necessário que a expressão informada seja confirmada
+
+let possuiOvos = True
+if (possuiOvos){
+  console.log("Vamos fazer um bolo")
+}
+
+Como a expressão foi possitiva então pode retornar oque estava dentro do if
+
+Um segunda opção seria utilizar o "else", ele é o nosso se não, então ficaria, se a primeira expressão der falsa é pulado para o "else" automaticamente
+
+let possuiOvos = False
+if (possuiOvos){
+  console.log("Vamos fazer um bolo")
+}else{
+  console.log("Vamos pedir uma pizza")
+}
+
+Falando em if encadeado - if dentro de if
+
+let minhaIdade = 13
+if (minhaIdade >= 18) {
+  console.log('Sou maior de idade');
+} else if ((minhaIdade > 0 && minhaIdade > 14) && minhaIdade < 18) {
+  console.log('Sou adolescente');
+} else {
+  console.log('Sou criança');
+}
+
