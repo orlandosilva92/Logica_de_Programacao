@@ -93,3 +93,45 @@ if (minhaIdade >= 18) {
   console.log('Sou criança');
 }
 
+Como trabalhar com switch case?
+
+Estrutura:
+
+switch (variavel_verificada){
+  case(valor_variavel_1):
+    console.log("informação 1")
+    break
+  case(valor_variavel_2):
+    console.log("informação 2")
+    break
+  default:
+    console.log("Outro valor")
+}
+
+O break serve para parar o swicth caso o valor esperado seja alcançado
+O default serve como um escape do programa, caso nenhuma das opções seja a esperada
+Pode ter mais de um valor dentro da case
+
+case(valor_variavel_1):
+case(valor_variavel_2):
+  console.log("Informação 1 e 2")
+  break
+
+Dentro do case pode ter várias outras coisas, como ifs, switchs, for, ....
+
+Como trabalhar com o laço de repetição FOR?
+
+for(declara_variavel_inicial; declara_como_vai_parar; incrementa++){
+  //Tudo que estiver dentro da chave vai ser repetido ate que o valor de parada esteja completo
+}
+
+Exemplo:
+
+let valor = 1
+let soma
+
+for (let contador = 0; contador < 10; contador++){
+  soma = valor + contador
+  console.log(valor + " + " + contador + " = " + soma)
+}
+
