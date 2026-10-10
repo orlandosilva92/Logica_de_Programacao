@@ -1,137 +1,179 @@
-Como apresentar algo na tela? 
-console.log(“Texto a ser mostrado”)
+# Lógica de Programação com JavaScript
 
-Como declarar uma variável? 
-let nomeDaVariavel = “Dado contido na variável”
+Anotações e exercícios do meu estudo de lógica de programação, usando JavaScript. Cada aula tem um arquivo em [`src/`](src) (`aula_01.js` ... `aula_10.js`) e as anotações abaixo servem como resumo de consulta.
 
-Posso declarar um variável sem atribuir dados? 
-Sim let nomeDaVariavel
+## Índice
 
-Como faz para criar comentários? 
-É utilizado // - Para uma única linha ou utilizar /**/ - Para mais de uma linha
+- [Saída, variáveis e constantes](#saída-variáveis-e-constantes)
+- [Tipos de dados](#tipos-de-dados)
+- [Vetores e matrizes](#vetores-e-matrizes)
+- [Operadores](#operadores)
+- [Condicionais: if, else e switch](#condicionais-if-else-e-switch)
+- [Laço de repetição: for](#laço-de-repetição-for)
 
-Como juntar um dado com uma variável? 
-Utilizando o “+”. console.get(“Meu nome é: ” + nome)
+## Saída, variáveis e constantes
 
-O que é uma CONSTANTE? 
-É um dado que não varia 
-const nomeDaConstante = “Dado contido na constante”
+**Como mostrar algo na tela?**
 
-Quais os principais tipos de variáveis? 
+```js
+console.log("Texto a ser mostrado");
+```
 
-Strings - Texto 
-Numbers - Numérico 
-Booleans - Verdadeiro ou Falso
+**Como declarar uma variável?** Com `let`. Dá para declarar sem atribuir um valor.
 
-Para que serve um vetor?
-Para armazenar mais de um dado em uma mesma variável ou constante
+```js
+let nomeDaVariavel = "Dado contido na variável";
+let semValor;
+```
 
-Como declará uma vetor?
-let nomeDoVetor = ["dado" , "contigo" , "no" , "vetor"]
-const nomeDoVetor =  = ["dado" , "contigo" , "no" , "vetor"]
+**Como criar comentários?**
 
-Para que serve uma matriz?
-Para armazenar dados mais complexos, organizar de forma a esta facil a interpretação de onde esta cada dado
-Pense em uma matriz como uma planilha de excel, onde há linhas e colunas, e a depender a linha e coluna escolhida, mostrará um resultado
+```js
+// comentário de uma linha
 
-Como se declará uma matriz?
+/* comentário
+   de várias linhas */
+```
+
+**Como juntar um texto com uma variável?** Com o `+`.
+
+```js
+let nome = "José";
+console.log("Meu nome é: " + nome);
+```
+
+**O que é uma constante?** Um dado que não varia. Usa-se `const`.
+
+```js
+const nomeDaConstante = "Dado contido na constante";
+```
+
+## Tipos de dados
+
+| Tipo | Descrição |
+|---|---|
+| `String` | Texto |
+| `Number` | Numérico |
+| `Boolean` | Verdadeiro ou falso (`true` / `false`) |
+
+## Vetores e matrizes
+
+**Vetor:** armazena mais de um dado na mesma variável ou constante.
+
+```js
+let nomeDoVetor = ["dado", "contido", "no", "vetor"];
+const outroVetor = ["dado", "contido", "no", "vetor"];
+```
+
+**Matriz:** organiza dados mais complexos. Pense em uma planilha do Excel: o resultado depende da linha e da coluna escolhidas.
+
+```js
 let nomeDaMatriz = [
-  ["jose" , "Casado" , 3],
-  ["Renan" , "Soleiro" , 1],
-  ["joana" , "Solteira" , 1]
-]
+  ["José", "Casado", 3],
+  ["Renan", "Solteiro", 1],
+  ["Joana", "Solteira", 1],
+];
+```
 
-ANOTAAAAA:
-#Metodos são ações que podem ser feitas com seu vetor ou sua matriz
-#Propriedades são caracteristicas
+> **Métodos** são ações que podem ser feitas com o vetor ou a matriz.
+> **Propriedades** são características deles.
 
-Tipo de operadores
-Aritméticos
-+,-,*,/,%
+## Operadores
 
-Relacionais
-==, !=, > , <, >= , <=
+| Tipo | Operadores |
+|---|---|
+| Aritméticos | `+`, `-`, `*`, `/`, `%` |
+| Relacionais | `==`, `!=`, `>`, `<`, `>=`, `<=` |
+| Lógicos | `&&` (e), `\|\|` (ou), `!` (não) |
+| Atribuição | `=`, `+=`, `-=`, `*=`, `/=`, `%=` |
+| Incremento / decremento | `++`, `--` |
 
-Lógicos
-&&  = and , || = or, ! = NOT
+## Condicionais: if, else e switch
 
-Atribuição
-=, +=, -=, *=, /=, %=
+### if
 
-Incremento e Decremento
-"++"
-"--"
+O bloco só executa se a expressão for verdadeira.
 
-Trabalhando com condicionais
+```js
+let possuiOvos = true;
 
-Para entrar em uma condicional é necessário que a expressão informada seja confirmada
-
-let possuiOvos = True
-if (possuiOvos){
-  console.log("Vamos fazer um bolo")
+if (possuiOvos) {
+  console.log("Vamos fazer um bolo");
 }
+```
 
-Como a expressão foi possitiva então pode retornar oque estava dentro do if
+### else
 
-Um segunda opção seria utilizar o "else", ele é o nosso se não, então ficaria, se a primeira expressão der falsa é pulado para o "else" automaticamente
+É o "senão": roda quando a expressão do `if` é falsa.
 
-let possuiOvos = False
-if (possuiOvos){
-  console.log("Vamos fazer um bolo")
-}else{
-  console.log("Vamos pedir uma pizza")
-}
+```js
+let possuiOvos = false;
 
-Falando em if encadeado - if dentro de if
-
-let minhaIdade = 13
-if (minhaIdade >= 18) {
-  console.log('Sou maior de idade');
-} else if ((minhaIdade > 0 && minhaIdade > 14) && minhaIdade < 18) {
-  console.log('Sou adolescente');
+if (possuiOvos) {
+  console.log("Vamos fazer um bolo");
 } else {
-  console.log('Sou criança');
+  console.log("Vamos pedir uma pizza");
 }
+```
 
-Como trabalhar com switch case?
+### if encadeado
 
-Estrutura:
+```js
+let minhaIdade = 13;
 
-switch (variavel_verificada){
-  case(valor_variavel_1):
-    console.log("informação 1")
-    break
-  case(valor_variavel_2):
-    console.log("informação 2")
-    break
+if (minhaIdade >= 18) {
+  console.log("Sou maior de idade");
+} else if (minhaIdade >= 12) {
+  console.log("Sou adolescente");
+} else {
+  console.log("Sou criança");
+}
+```
+
+### switch / case
+
+```js
+switch (variavelVerificada) {
+  case valor1:
+    console.log("informação 1");
+    break;
+  case valor2:
+    console.log("informação 2");
+    break;
   default:
-    console.log("Outro valor")
+    console.log("Outro valor");
 }
+```
 
-O break serve para parar o swicth caso o valor esperado seja alcançado
-O default serve como um escape do programa, caso nenhuma das opções seja a esperada
-Pode ter mais de um valor dentro da case
+- `break` para o `switch` quando o valor esperado é encontrado.
+- `default` é a saída de escape, caso nenhuma opção seja a esperada.
+- Um mesmo bloco pode atender mais de um `case`:
 
-case(valor_variavel_1):
-case(valor_variavel_2):
-  console.log("Informação 1 e 2")
-  break
+```js
+case valor1:
+case valor2:
+  console.log("Informação 1 e 2");
+  break;
+```
 
-Dentro do case pode ter várias outras coisas, como ifs, switchs, for, ....
+Dentro de um `case` pode haver outras estruturas, como `if`, `switch` e `for`.
 
-Como trabalhar com o laço de repetição FOR?
+## Laço de repetição: for
 
-for(declara_variavel_inicial; declara_como_vai_parar; incrementa++){
-  //Tudo que estiver dentro da chave vai ser repetido ate que o valor de parada esteja completo
+```js
+for (inicio; condicaoDeParada; incremento) {
+  // repete até a condição de parada deixar de ser verdadeira
 }
+```
 
 Exemplo:
 
-let valor = 1
-let soma
+```js
+let valor = 1;
+let soma;
 
-for (let contador = 0; contador < 10; contador++){
-  soma = valor + contador
-  console.log(valor + " + " + contador + " = " + soma)
+for (let contador = 0; contador < 10; contador++) {
+  soma = valor + contador;
+  console.log(valor + " + " + contador + " = " + soma);
 }
-
+```
